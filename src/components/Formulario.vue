@@ -9,15 +9,17 @@
 					<section>
 						<strong>00:00:00</strong>
 					</section>
-					<button class="button">
+					<button class="button" @click="initCount()">
 						<span class="icon">
 							<i class="fas fa-play"></i>
 						</span>
+						<span>Play</span>
 					</button>
-					<button class="button">
+					<button class="button" @click="finallyCount()">
 						<span class="icon">
 							<i class="fas fa-stop"></i>
 						</span>
+						<span>Stop</span>
 					</button>
 				</div>
 			</div>
@@ -29,6 +31,14 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-	name:"form-tasks"
+	name:"form-tasks",
+	methods:{
+		initCount() {
+			console.log("start count")
+		},
+		finallyCount() {
+			console.log("Finally count")
+		}
+	}
 })
 </script>

@@ -1,15 +1,15 @@
-<template lang="">
-<header>
-	<h1>
-		<img src="../assets/logo.png" alt="AluraTracker">
-	</h1>
-</header>
+<template>
+	<header class="is-flex is-justify-content-center">
+		<h1 class="pt-4">
+			<img src="../assets/logo.png" alt="AluraTracker">
+		</h1>
+	</header>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-	name:"BarraLateral"
+	name: "BarraLateral"
 })
 </script>
 <style scoped>
@@ -23,7 +23,6 @@ header {
 	header {
 		padding: 2.5rem;
 		height: auto;
+	}
 }
-}
-
 </style>

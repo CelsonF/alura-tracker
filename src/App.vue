@@ -1,6 +1,6 @@
 <template>
   <main class="columns ls-gapless is-multiline">
-		<div class="column is-one-quarter pr-0">
+		<div class="column is-one-quarter pr-0 pb-0">
 			<BarraLateral/>
 		</div>
 		<div class="column is-three-quarter pl-0">

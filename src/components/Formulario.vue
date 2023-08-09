@@ -7,7 +7,9 @@
 			<div class="column">
 				<div class="is-flex is-align-items-center is-justify-content-space-between">
 					<section>
-						<strong>00:00:00</strong>
+						<strong>
+							{{ timePast }}
+						</strong>
 					</section>
 					<button class="button" @click="initCount()">
 						<span class="icon">
@@ -32,12 +34,25 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
 	name:"form-tasks",
+	data(){
+		return{
+			timeInSeconds: 0,
+			cronometer:0
+		}
+	},
+	computed: {
+		timePast() : string {
+			return new Date(this.timeInSeconds * 1000).toISOString().substring(11,19)
+		}
+	},
 	methods:{
 		initCount() {
-			console.log("start count")
+			this.cronometer = setInterval(() => {
+				this.timeInSeconds += 1
+			}, 1000)
 		},
 		finallyCount() {
-			console.log("Finally count")
+			clearInterval(this.cronometer)
 		}
 	}
 })

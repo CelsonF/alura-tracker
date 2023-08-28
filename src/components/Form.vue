@@ -5,7 +5,7 @@
 				<input type="text" class="input" placeholder="Qual tarefa você deseja iniciar?" v-model="describeTask">
 			</div>
 			<div class="column">
-				<Temporizador @finished-timer="finishedTask"/>	
+				<Timer @finished-timer="finishedTask"/>	
 			</div>
 		</div>
 	</div>
@@ -13,12 +13,12 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import Temporizador from './Temporizador.vue'
+import Timer from './Timer.vue'
 
 export default defineComponent({
 	name:"form-tasks",
 	components:{
-		Temporizador
+		Timer
 	},
 	data(){
 		return{

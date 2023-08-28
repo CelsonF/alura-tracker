@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    name: 'button-control-timer',
+    name: 'button-control',
     emits:['clicked'],
     props:{
         disabledTimer:{

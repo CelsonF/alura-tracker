@@ -1,21 +1,21 @@
 <template>
     <div class="is-flex is-align-items-center is-justify-content-space-between">
-        <Cronometro :time-in-seconds="timeInSeconds" />
-        <Botao @clicked="initCount()" icon="fas fa-play" desciption="Play" :disabled-timer="runningChronometer"/>
-        <Botao @clicked="finallyCount()" icon="fas fa-stop" desciption="Stop" :disabled-timer="!runningChronometer"/>
+        <Chronometer :time-in-seconds="timeInSeconds" />
+        <ButtonControl @clicked="initCount()" icon="fas fa-play" desciption="Play" :disabled-timer="runningChronometer"/>
+        <ButtonControl @clicked="finallyCount()" icon="fas fa-stop" desciption="Stop" :disabled-timer="!runningChronometer"/>
     </div>
 </template>
 <script lang="ts">
 import {defineComponent} from 'vue'
-import Cronometro from './Cronometro.vue'
-import Botao from './Botao.vue'
+import Chronometer from './Chronometer.vue'
+import ButtonControl from './ButtonControl.vue'
 
 export default defineComponent({
 	name:"temporizador-bar",
     emits: ['finishedTimer'],
     components:{
-        Cronometro,
-        Botao
+        Chronometer,
+        ButtonControl
     },
 	data(){
 		return{

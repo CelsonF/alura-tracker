@@ -5,6 +5,14 @@
 		</div>
 		<div class="column is-three-quarter pl-0">
 			<Form/>
+			<div class="p-5">
+				<Task />
+				<Task />
+				<Task />
+				<Task />
+				<Task />
+				<Task />
+			</div>
 		</div>
 	</main>
 </template>
@@ -13,12 +21,14 @@
 import { defineComponent } from 'vue';
 import SideBar from "./components/SideBar.vue";
 import Form from "./components/Form.vue";
+import Task from "./components/Tasks.vue";
 
 export default defineComponent ({
 	name:'App',
 	components :{
 		SideBar,
-		Form 
+		Form,
+		Task 
 	}
 })
 

@@ -11,8 +11,8 @@ import Chronometer from './Chronometer.vue'
 import ButtonControl from './ButtonControl.vue'
 
 export default defineComponent({
-	name:"temporizador-bar",
-    emits: ['finishedTimer'],
+	name:"timer-bar",
+    emits: ['finished-timer'],
     components:{
         Chronometer,
         ButtonControl
@@ -34,7 +34,7 @@ export default defineComponent({
 		finallyCount() {
             this.runningChronometer = false
 			clearInterval(this.chronometer)
-            this.$emit('finishedTimer', this.timeInSeconds)
+            this.$emit('finished-timer', this.timeInSeconds)
             this.timeInSeconds = 0
 		}
 	}

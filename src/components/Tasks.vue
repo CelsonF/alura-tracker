@@ -2,24 +2,31 @@
     <div class="box has-text-weight-bold ">
         <div class="columns">
             <div class="column is-7">
-                Descrição da tarefa
+            {{task.description}}
             </div>
             <div class="column">
-                <Chronometer :time-in-seconds="15" />
+                <Chronometer :time-in-seconds="task.descriptionInSeconds" />
             </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
+import ITasks from '@/Interfaces/ITasks';
 import Chronometer from './Chronometer.vue'
 
-import { defineComponent } from 'vue';
+import { defineComponent,PropType } from 'vue';
 export default defineComponent({
     components: {
         Chronometer
     },
-    name: 'task-rows'
+    name: 'task-rows',
+    props: {
+        task: {
+            type:Object as PropType<ITasks>,
+            required:true
+        }
+    }
 });
 </script>
 

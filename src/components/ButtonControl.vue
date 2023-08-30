@@ -1,5 +1,5 @@
 <template>
-        <button class="button" :disabled="disabledTimer">
+        <button @click="clicked" class="button" :disabled="disabledTimer">
             <span class="icon">
                 <i :class="icon"></i>
             </span>

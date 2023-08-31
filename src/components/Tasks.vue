@@ -1,24 +1,26 @@
 <template>
-    <div class="box has-text-weight-bold ">
+    <Box>
         <div class="columns">
             <div class="column is-7">
-            {{task.description}}
+            {{task.description || 'Task without description'}}
             </div>
             <div class="column">
                 <Chronometer :time-in-seconds="task.descriptionInSeconds" />
             </div>
         </div>
-    </div>
+    </Box>
 </template>
 
 <script lang="ts">
 import ITasks from '@/Interfaces/ITasks';
 import Chronometer from './Chronometer.vue'
+import Box from './Box.vue'
 
 import { defineComponent,PropType } from 'vue';
 export default defineComponent({
     components: {
-        Chronometer
+        Chronometer,
+        Box
     },
     name: 'task-rows',
     props: {
@@ -29,9 +31,3 @@ export default defineComponent({
     }
 });
 </script>
-
-<style scoped>
-.box { 
-    background-color: #FAF0CA;
-}
-</style>

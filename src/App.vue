@@ -7,6 +7,9 @@
 			<Form @when-finished-task="addTask"/>
 			<div class="p-5">
 				<Task v-for="(task, index) in tasks" :key="index" :task="task"/>
+				<Box v-if="listTasksEmpty">
+					<p>You didn't tasks today 🙁 </p>
+				</Box>
 			</div>
 		</div>
 	</main>
@@ -18,17 +21,24 @@ import SideBar from "./components/SideBar.vue";
 import Form from "./components/Form.vue";
 import Task from "./components/Tasks.vue";
 import ITasks from "./Interfaces/ITasks";
+import Box from "./components/Box.vue";
 
 export default defineComponent ({
 	name:'App',
 	components :{
 		SideBar,
 		Form,
-		Task 
+		Task ,
+		Box
 	},
 	data(){
 		return{
 			tasks: [] as ITasks[]
+		}
+	},
+	computed:{
+		listTasksEmpty() : boolean {
+			return this.tasks.length === 0
 		}
 	},
 	methods:{

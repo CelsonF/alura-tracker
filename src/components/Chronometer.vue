@@ -1,6 +1,6 @@
 <template>
     <section>
-        <strong>
+        <strong class="display-chron">
             {{ timePast }}
         </strong>
     </section>
@@ -25,3 +25,9 @@ export default defineComponent({
 });
 
 </script>
+
+<style>
+.display-chron {
+    color: var(--text-primary);
+}
+</style>

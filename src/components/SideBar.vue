@@ -1,15 +1,37 @@
 <template>
-	<header class="is-flex is-justify-content-center">
+	<header class="is-flex is-align-items-center is-flex-direction-column ">
 		<h1 class="pt-4">
 			<img src="../assets/logo.png" alt="AluraTracker">
 		</h1>
+		<button class="button"  @click="changeDarkMode()">
+			{{ textButton }}
+		</button>
 	</header>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-	name: "BarraLateral"
+	name: "BarraLateral",
+	emits: ["change-dark-mode"],
+	data() {
+		return {
+			darkMode: false
+		}
+	},
+	computed: {
+		textButton() {
+			if (this.darkMode) {
+				return "Deactive light mode";
+			}
+			return "Active dark mode";
+		}
+	},
+	methods: {
+		changeDarkMode() {
+			this.$emit("change-dark-mode", this.darkMode = !this.darkMode);
+		}
+	}
 })
 </script>
 <style scoped>
